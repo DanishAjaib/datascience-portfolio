@@ -162,6 +162,12 @@ with tab1:
   txt5('**Skills**', '`Technial Writing`, `Research Skills`, `Analytical Skills`, `Communication`, `Synthesis of Information`')
   st.link_button(label='PDF', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617200423/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
+  txt('#### Market Analysis and Strategy','')
+  st.markdown('''
+  In this project during my internship, I was part of a team of four tasked with developing a market analysis and marketing plan for an emerging oat milk brand. We conducted in-depth research on market trends and competitor strategies, focusing on plant-based dairy alternatives. Our approach included frequent collaborative team meetings and strategic discussions with the CEO, leading to a tailored marketing strategy. The strategy emphasized health, sustainability, and allergen-free benefits, targeting diverse consumer demographics. This project honed my skills in teamwork, strategic planning, and high-level corporate communication.
+  ''')
+  txt5('**Skills**', '`Communication`, `Market Data Analysis`, `Market Research`, `Team Collaboration`')
+  st.link_button(label='Report', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617545125/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
 with tab2:
   txt('#### Predicting Employee Churn','')
@@ -178,7 +184,6 @@ with tab2:
   txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Tweet-Analysis-and-Clustering')
 
-with tab3:
   txt('#### Australia Rain Visualization and Forecast','')
   st.markdown('''
   A hoppy project analysing Australia rain patterns and building a model for predicting next day rain.
@@ -186,6 +191,13 @@ with tab3:
   txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1705554905884/single-media-viewer?type=LINK&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
+  txt('#### Amazon Sentiment Analysis','')
+  st.markdown('''
+  A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
+  ''')
+  txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
+  st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
+  
 with tab4:
   txt('#### Market Analysis and Strategy','')
   st.markdown('''
@@ -194,13 +206,7 @@ with tab4:
   txt5('**Skills**', '`Communication`, `Market Data Analysis`, `Market Research`, `Team Collaboration`')
   st.link_button(label='Report', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617545125/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
-with tab5:
-  txt('#### Amazon Sentiment Analysis','')
-  st.markdown('''
-  A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
-  ''')
-  txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
-  st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
+ 
 #####################
 st.markdown('''
 ## Licenses & Certification

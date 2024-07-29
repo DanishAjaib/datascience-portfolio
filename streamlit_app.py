@@ -139,11 +139,11 @@ st.markdown('''
 ''')
 
 sac.tabs([
-    sac.TabsItem(label='Data Science', tag="10"),
-    sac.TabsItem(icon='google'),
-    sac.TabsItem(label='App Dev', icon='github'),
-    sac.TabsItem(label='disabled', disabled=True),
-], align='center')
+    sac.TabsItem(label='Writing', tag="10"),
+    sac.TabsItem(icon='Visualization'),
+    sac.TabsItem(label='App Development', icon='github'),
+    sac.TabsItem(label='Data Analysis & ML', ),
+], align='start')
 
 txt('#### A Survey of Cross-Domain Recommender Systems','')
 st.markdown('''

@@ -135,8 +135,7 @@ st.markdown('''
 ## Projects
 ''')
 
-txt('**A Survey of Cross-Domain Recommender Systems, Space Shuttle Parking**, Final Project',
-'Literature Review')
+txt('**A Survey of Cross-Domain Recommender Systems**','Literature Review')
 st.markdown('''
 This work is a literature review and delves into overcoming traditional collaborative filtering challenges using advanced techniques like transfer learning and neural collaborative filtering. It highlights the transformative potential of these systems across diverse industries, from e-commerce to healthcare. My journey through this project enhanced my understanding of data science intricacies and future tech trends, contributing valuable insights into the evolution of user experience in digital domains.
 ''')

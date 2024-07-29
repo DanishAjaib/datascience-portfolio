@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import streamlit_shadcn_ui as ui
 
 
 with open("style.css") as f:
@@ -13,9 +12,8 @@ st.write('''
 ##### *Resume* 
 ''')
 
-avatar = ui.avatar('dp.png')
-# image = Image.open('dp.png')
-# st.image(image, width=150)
+image = Image.open('dp2.png')
+st.image(image, width=150)
 
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''

@@ -84,6 +84,15 @@ def txt4(a, b, c):
   with col3:
     st.markdown(c)
 
+
+def txt5(a, b,):
+  col1, col2, col3 = st.columns([1,3])
+  with col1:
+    st.markdown(f'`{a}`')
+  with col2:
+    st.markdown(b)
+
+
 st.markdown('''
 ## Work Experience
 ''')
@@ -125,7 +134,7 @@ txt('**A Survey of Cross-Domain Recommender Systems, Space Shuttle Parking**, Fi
 st.markdown('''
 This work is a literature review and delves into overcoming traditional collaborative filtering challenges using advanced techniques like transfer learning and neural collaborative filtering. It highlights the transformative potential of these systems across diverse industries, from e-commerce to healthcare. My journey through this project enhanced my understanding of data science intricacies and future tech trends, contributing valuable insights into the evolution of user experience in digital domains.
 ''')
-txt3('**Skills**', '`Technial Writing`, `Research Skills`, `Analytical Skills`, `Communication`, `Synthesis of Information`')
+txt5('**Skills**', '`Technial Writing`, `Research Skills`, `Analytical Skills`, `Communication`, `Synthesis of Information`')
 
 #####################
 st.markdown('''

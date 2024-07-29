@@ -1,5 +1,7 @@
 import streamlit as st
 from PIL import Image
+import streamlit_shadcn_ui as ui
+
 
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
@@ -11,8 +13,9 @@ st.write('''
 ##### *Resume* 
 ''')
 
-image = Image.open('dp.png')
-st.image(image, width=150)
+avatar = ui.avatar('dp.png')
+# image = Image.open('dp.png')
+# st.image(image, width=150)
 
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''
@@ -92,6 +95,11 @@ def txt5(a, b):
   with col2:
     st.markdown(b)
 
+def text_project(project_title, project_category, product_description, project_skills):
+  st.markdown(f'''
+{project_title}
+''')
+  st.markdown(f'{project_category} - ')
 
 st.markdown('''
 ## Work Experience

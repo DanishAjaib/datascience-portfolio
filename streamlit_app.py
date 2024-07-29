@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+import streamlit_antd_components as sac
 
 
 with open("style.css") as f:
@@ -137,6 +138,13 @@ st.markdown('''
 ## Projects
 ''')
 
+sac.tabs([
+    sac.TabsItem(label='Data Science', tag="10"),
+    sac.TabsItem(icon='google'),
+    sac.TabsItem(label='App Dev', icon='github'),
+    sac.TabsItem(label='disabled', disabled=True),
+], align='center')
+
 txt('#### A Survey of Cross-Domain Recommender Systems','')
 st.markdown('''
 This work is a literature review and delves into overcoming traditional collaborative filtering challenges using advanced techniques like transfer learning and neural collaborative filtering. It highlights the transformative potential of these systems across diverse industries, from e-commerce to healthcare. My journey through this project enhanced my understanding of data science intricacies and future tech trends, contributing valuable insights into the evolution of user experience in digital domains.
@@ -145,12 +153,7 @@ txt5('**Skills**', '`Technial Writing`, `Research Skills`, `Analytical Skills`, 
 st.link_button(label='PDF', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617200423/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
 
-txt('#### Amazon Sentiment Analysis','')
-st.markdown('''
-A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
-''')
-txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
-st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
+
 
 txt('#### Amazon Sentiment Analysis','')
 st.markdown('''

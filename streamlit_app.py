@@ -93,11 +93,13 @@ def txt5(a, b):
   with col2:
     st.markdown(b)
 
-def text_project(project_title, project_category, product_description, project_skills):
+def text_project(title, link_txt, description, skills, link):
+  txt(f'#### {title}','')
   st.markdown(f'''
-{project_title}
-''')
-  st.markdown(f'{project_category} - ')
+  {description}
+  ''')
+  txt5('**Skills**', ", ".join(f"`{skill}`" for skill in skills))
+  st.link_button(label=f'{link_txt}', url=f'{link}')
 
 st.markdown('''
 ## Work Experience
@@ -140,31 +142,51 @@ st.markdown('''
 This work is a literature review and delves into overcoming traditional collaborative filtering challenges using advanced techniques like transfer learning and neural collaborative filtering. It highlights the transformative potential of these systems across diverse industries, from e-commerce to healthcare. My journey through this project enhanced my understanding of data science intricacies and future tech trends, contributing valuable insights into the evolution of user experience in digital domains.
 ''')
 txt5('**Skills**', '`Technial Writing`, `Research Skills`, `Analytical Skills`, `Communication`, `Synthesis of Information`')
+st.link_button(label='PDF', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617200423/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
+
 
 txt('#### Amazon Sentiment Analysis','')
 st.markdown('''
 A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
 ''')
 txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
+st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
+
+txt('#### Amazon Sentiment Analysis','')
+st.markdown('''
+A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
+''')
+txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
+st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
 
 txt('#### Predicting Employee Churn','')
 st.markdown('''
 Analysing employee churn data and building a model to predict employee churn..
 ''')
 txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
-st.link_button(label='Github', url='https://github.com/DanishAjaib/employee_churn')
+st.link_button(label='Notebook', url='https://github.com/DanishAjaib/employee_churn')
+
+txt('#### Tweet Analysis and Clustering','')
+st.markdown('''
+A project demonstrating Data Cleaning, Enrichment, Analysis, Topic Extraction, Classification and Clustering of a twitter dataset.
+''')
+txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
+st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Tweet-Analysis-and-Clustering')
 
 txt('#### Australia Rain Visualization and Forecast','')
 st.markdown('''
 A hoppy project analysing Australia rain patterns and building a model for predicting next day rain.
 ''')
 txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
+st.link_button(label='Notebook', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1705554905884/single-media-viewer?type=LINK&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
+
 
 txt('#### Market Analysis and Strategy','')
 st.markdown('''
 In this project during my internship, I was part of a team of four tasked with developing a market analysis and marketing plan for an emerging oat milk brand. We conducted in-depth research on market trends and competitor strategies, focusing on plant-based dairy alternatives. Our approach included frequent collaborative team meetings and strategic discussions with the CEO, leading to a tailored marketing strategy. The strategy emphasized health, sustainability, and allergen-free benefits, targeting diverse consumer demographics. This project honed my skills in teamwork, strategic planning, and high-level corporate communication.
 ''')
 txt5('**Skills**', '`Communication`, `Market Data Analysis`, `Market Research`, `Team Collaboration`')
+st.link_button(label='Report', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617545125/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
 
 #####################
 st.markdown('''

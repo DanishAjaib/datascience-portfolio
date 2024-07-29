@@ -147,13 +147,20 @@ A university project focusing on Web Scraping, Data Cleaning, Data Analsis and f
 ''')
 txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
 
+txt('#### Predicting Employee Churn','')
+st.markdown('''
+Analysing employee churn data and building a model to predict employee churn..
+''')
+txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
+st.link_button(label='Github', url='https://github.com/DanishAjaib/employee_churn')
+
 txt('#### Australia Rain Visualization and Forecast','')
 st.markdown('''
 A hoppy project analysing Australia rain patterns and building a model for predicting next day rain.
 ''')
 txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
 
-txt('#### Market Analysis and Strategy for New oat Milk Company','')
+txt('#### Market Analysis and Strategy','')
 st.markdown('''
 In this project during my internship, I was part of a team of four tasked with developing a market analysis and marketing plan for an emerging oat milk brand. We conducted in-depth research on market trends and competitor strategies, focusing on plant-based dairy alternatives. Our approach included frequent collaborative team meetings and strategic discussions with the CEO, leading to a tailored marketing strategy. The strategy emphasized health, sustainability, and allergen-free benefits, targeting diverse consumer demographics. This project honed my skills in teamwork, strategic planning, and high-level corporate communication.
 ''')

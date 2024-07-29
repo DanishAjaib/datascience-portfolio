@@ -89,7 +89,7 @@ st.markdown('''
 ## Education
 ''')
 
-txt('**Masters of Data Science, *Macquarie University*, Australia',
+txt('**Masters of Data Science**, *Macquarie University*, Australia',
 '2019-2023')
 st.markdown('''
 **Date Conferred:** February 29, 2024  

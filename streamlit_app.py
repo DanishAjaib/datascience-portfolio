@@ -137,14 +137,22 @@ txt3('Model deployment', '`streamlit`,`Heroku`, `AWS`, ')
 st.markdown('''
 ## Projects
 ''')
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    'Writing', 
+    'Visualization', 
+    'Flutter', 
+    'Data Analysis & ML', 
+    'Python'
+])
 
-tab1, tab2, tab3, tab4, tab5 = sac.tabs([
-    sac.TabsItem(label='Writing', icon='vector-pen', tag="2"),
-    sac.TabsItem(label='Visualization', icon='bar-chart-fill'),
-    sac.TabsItem(label='Flutter', icon='code'),
-    sac.TabsItem(label='Data Analysis & ML', ),
-    sac.TabsItem(label='Python', icon='code'),
-], align='start')
+
+# tab1, tab2, tab3, tab4, tab5 = sac.tabs([
+#     sac.TabsItem(label='Writing', icon='vector-pen', tag="2"),
+#     sac.TabsItem(label='Visualization', icon='bar-chart-fill'),
+#     sac.TabsItem(label='Flutter', icon='code'),
+#     sac.TabsItem(label='Data Analysis & ML', ),
+#     sac.TabsItem(label='Python', icon='code'),
+# ], align='start')
 
 with tab1:
   txt('#### A Survey of Cross-Domain Recommender Systems','')

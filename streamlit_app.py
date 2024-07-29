@@ -134,16 +134,14 @@ txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly` , `Tableau`')
 txt3('Machine Learning', '`scikit-learn`')
 txt3('Model deployment', '`streamlit`,`Heroku`, `AWS`, ')
 
-st.markdown('''
-## Projects
-''')
+st.header('Projects')
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     'Data Analysis & ML', 
     'Data Visualization',
     'Python Scripting'
     'Research & Writing', 
     'App Development',  
-    
+
 ])
 
 

@@ -88,7 +88,7 @@ def txt4(a, b, c):
 def txt5(a, b):
   col1, col2 = st.columns([1,3])
   with col1:
-    st.markdown(f'`{a}`')
+    st.markdown(a)
   with col2:
     st.markdown(b)
 

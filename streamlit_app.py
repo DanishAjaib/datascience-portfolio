@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import streamlit_antd_components as sac
+import streamlit.components.v1 as components
 
 
 with open("style.css") as f:
@@ -183,6 +184,13 @@ with tab1:
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
 
 with tab2:
+  components.html(
+  """
+  <iframe src="https://public.tableau.com/app/profile/danish.ajaib/viz/SalesProfitPerformance_17206679136970/Dashboard-SalesPerformance?::embed=yes&:tabs=yes&:toolbar=yes&:origin=viz_share_link"
+    width="1600" height="2000">
+  </iframe>
+  """
+)
   txt('#### Sales/Profit Performance Dashboard','')
   st.markdown('''
     A Tableau dashboard visualizing Sales/Profit performance.

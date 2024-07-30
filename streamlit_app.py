@@ -248,7 +248,7 @@ with tab5:
 st.markdown('''
 ## Licenses & Certification
 ''')
-txt4('Coursera', 'Google Advanced Data Analytics Specialization', 'https://www.coursera.org/account/accomplishments/specialization/LLZCWPL23U6R')
+txt4('Coursera', 'Google Advanced Data Analytics Specialization', '[See Certificate](https://www.coursera.org/account/accomplishments/specialization/LLZCWPL23U6R)')
 txt4('Coursera', 'Build and Operate Machine Learning Solutions with Azure', 'https://www.coursera.org/share/https://coursera.org/share/521bc1dce8b6ffb8b8ab6c0c8c90de13')
 txt4('Coursera', 'Create Machine Learning Models with Microsoft Azure', 'https://www.coursera.org/account/accomplishments/certificate/2PQ8FW5W7YFF')
 txt4('Coursera', 'Microsoft Azure Machine Learning for Data Scientists', 'https://coursera.org/share/695c787822b9ec8f7b0ed35a1a499f77')

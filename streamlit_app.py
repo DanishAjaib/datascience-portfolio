@@ -208,17 +208,18 @@ with tab2:
 with tab3:
   txt('#### Backend App','')
   st.markdown('''
-   A python script responsible for:
-   - Data Ingestion, Cleaning and Preparation.
-   - Automatic Email Customer Support using Opean AI API.
-   - 
+   This script is responsible for 
+   - Monitoring email inboxes using Microsoft Graph API.
+   - Data Ingestion, cleaning and preparation.
+   - Pushing the  data to Elastic Search and Firestore.
+   - Monitoring customer  email inqueries and responding to them using Open AI ChatGPT Assisstants API.
   ''')
   txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
   st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
 
   txt('#### Python Script for Monitoring Car Park Cameras','')
   st.markdown('''
-   A python script responsible for monitoring multiple car park cameras and controlling gate operations for authorized vehicles. 
+   This script connects to multiple camera streams responsbile Automatic Number Plate Recognition. Based on the authorization status of a vehicle entering or exiting, the script controls gate operations by sending a singal to an onsite microcontroller. 
   ''')
   txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
   st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')

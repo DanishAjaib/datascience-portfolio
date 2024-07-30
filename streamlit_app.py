@@ -138,10 +138,10 @@ txt3('Model deployment', '`streamlit`,`Heroku`, `AWS`, ')
 st.header('Projects')
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     '**Data Analysis & ML**', 
-    'Data Visualization',
-    'Python Scripting',
-    'Research & Writing', 
-    'App Development',  
+    '**Data Visualization**',
+    '**Python Scripting**',
+    '**Research & Writing**', 
+    '**App Development**',  
 
 ])
 

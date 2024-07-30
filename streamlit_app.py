@@ -214,15 +214,14 @@ with tab3:
    - Pushing the  data to Elastic Search and Firestore.
    - Monitoring customer  email inqueries and responding to them using Open AI ChatGPT Assisstants API.
   ''')
-  txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
+  txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`, `Heroku`, `Elastic Search`, `Firestore`, `Redis`')
   st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
 
   txt('#### Python Script for Monitoring Car Park Cameras','')
   st.markdown('''
    This script connects to multiple camera streams responsbile Automatic Number Plate Recognition. Based on the authorization status of a vehicle entering or exiting, the script controls gate operations by sending a singal to an onsite microcontroller. 
   ''')
-  txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
-  st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
+  txt5('**Skills**', '`Python`, `API`, `Heroku`,')
 
 
 with tab4:
@@ -239,6 +238,14 @@ with tab4:
   ''')
   txt5('**Skills**', '`Communication`, `Market Data Analysis`, `Market Research`, `Team Collaboration`')
   st.link_button(label='Report', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617545125/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
+
+with tab5:
+  txt('#### Budget Management App','')
+  st.markdown('''
+   A budget management app written in Java and Kotlin.
+  ''')
+  txt5('**Skills**', '`Dart`, `Java`,')
+  st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/CipWDJRcygiL/SpesaBudgetManager/')
 
 
 

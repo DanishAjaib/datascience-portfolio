@@ -137,7 +137,7 @@ txt3('Model deployment', '`streamlit`,`Heroku`, `AWS`, ')
 
 st.header('Projects')
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    'Data Analysis & ML', 
+    '*Data Analysis & ML*', 
     'Data Visualization',
     'Python Scripting',
     'Research & Writing', 
@@ -145,14 +145,6 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 ])
 
-
-# tab1, tab2, tab3, tab4, tab5 = sac.tabs([
-#     sac.TabsItem(label='Writing', icon='vector-pen', tag="2"),
-#     sac.TabsItem(label='Visualization', icon='bar-chart-fill'),
-#     sac.TabsItem(label='Flutter', icon='code'),
-#     sac.TabsItem(label='Data Analysis & ML', ),
-#     sac.TabsItem(label='Python', icon='code'),
-# ], align='start')
 
 with tab1:
   txt('#### Predicting Employee Churn','')
@@ -174,7 +166,7 @@ with tab1:
   A hoppy project analysing Australia rain patterns and building a model for predicting next day rain.
   ''')
   txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
-  st.link_button(label='Notebook', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1705554905884/single-media-viewer?type=LINK&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
+  st.link_button(label='Notebook', url='https://github.com/DanishAjaib/australia_rain_forecast')
 
   txt('#### Amazon Sentiment Analysis','')
   st.markdown('''

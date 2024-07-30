@@ -249,13 +249,13 @@ st.markdown('''
 ## Licenses & Certification
 ''')
 txt4('Coursera', 'Google Advanced Data Analytics Specialization', '[See Certificate](https://www.coursera.org/account/accomplishments/specialization/LLZCWPL23U6R)')
-txt4('Coursera', 'Build and Operate Machine Learning Solutions with Azure', 'https://www.coursera.org/share/https://coursera.org/share/521bc1dce8b6ffb8b8ab6c0c8c90de13')
-txt4('Coursera', 'Create Machine Learning Models with Microsoft Azure', 'https://www.coursera.org/account/accomplishments/certificate/2PQ8FW5W7YFF')
-txt4('Coursera', 'Microsoft Azure Machine Learning for Data Scientists', 'https://coursera.org/share/695c787822b9ec8f7b0ed35a1a499f77')
-txt4('Coursera', 'Time Management Fundamentals', 'https://www.linkedin.com/learning/certificates/d22bec6e4e60f5564ce73f486b70c7c6deae364d636362a2e15b59a0468f23c0')
-txt4('Macquarie University', 'Study Australia Industry Experience Program Completer','https://api.practera.com/achieve/user_achievements/assertion/d4r7junAW.json')
-txt4('Coursera', 'Business Analysis Foundations','https://www.linkedin.com/learning/certificates/2bf0d93c2b32bbdf6a380f7baf0daca611c8be65bfe6015bea5638c592d466de?trk=share_certificate')
-txt4('Macquarie University', 'Study Australia Industry Experience Program Completer','https://api.practera.com/achieve/user_achievements/assertion/d4r7junAW.json')
+txt4('Coursera', 'Build and Operate Machine Learning Solutions with Azure', '[See Certificate](https://www.coursera.org/share/https://coursera.org/share/521bc1dce8b6ffb8b8ab6c0c8c90de13)')
+txt4('Coursera', 'Create Machine Learning Models with Microsoft Azure', '[See Certificate](https://www.coursera.org/account/accomplishments/certificate/2PQ8FW5W7YFF)')
+txt4('Coursera', 'Microsoft Azure Machine Learning for Data Scientists', '[See Certificate](https://coursera.org/share/695c787822b9ec8f7b0ed35a1a499f77)')
+txt4('Coursera', 'Time Management Fundamentals', '[See Certificate](https://www.linkedin.com/learning/certificates/d22bec6e4e60f5564ce73f486b70c7c6deae364d636362a2e15b59a0468f23c0)')
+txt4('Macquarie University', 'Study Australia Industry Experience Program Completer','[See Certificate](https://api.practera.com/achieve/user_achievements/assertion/d4r7junAW.json)')
+txt4('Coursera', 'Business Analysis Foundations','[See Certificate](https://www.linkedin.com/learning/certificates/2bf0d93c2b32bbdf6a380f7baf0daca611c8be65bfe6015bea5638c592d466de?trk=share_certificate)')
+txt4('Macquarie University', 'Study Australia Industry Experience Program Completer','[See Certificate](https://api.practera.com/achieve/user_achievements/assertion/d4r7junAW.json)')
 
 
 

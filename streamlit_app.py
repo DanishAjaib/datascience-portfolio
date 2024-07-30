@@ -147,6 +147,13 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 
 with tab1:
+  txt('#### British Airways Customer Review Analysis','')
+  st.markdown('''
+  Analysing customer reviews for British Airways using NLTK.
+  ''')
+  txt5('**Skills**', '`Web Scraping`, `Data Cleaning`, `NLP`, `Data Visualization`')
+  st.link_button(label='Notebook', url='https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb')
+
   txt('#### Predicting Employee Churn','')
   st.markdown('''
   Analysing employee churn data and building a model to predict employee churn..

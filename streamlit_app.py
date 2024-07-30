@@ -204,7 +204,24 @@ with tab2:
   txt5('**Skills**', '`Tableau`, `Data Visualization`')
   st.link_button(label='Dashboard', url='https://public.tableau.com/app/profile/danish.ajaib/viz/SeoulBicycleRental_17064119275750/Dashboard1')
 
-  
+
+with tab3:
+  txt('#### Backend App','')
+  st.markdown('''
+   A python script responsible for:
+   - Data Ingestion, Cleaning and Preparation.
+   - Automatic Email Customer Support using Opean AI API.
+   - 
+  ''')
+  txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
+  st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
+
+  txt('#### Python Script for Monitoring Car Park Cameras','')
+  st.markdown('''
+   A python script responsible for monitoring multiple car park cameras and controlling gate operations for authorized vehicles. 
+  ''')
+  txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`,')
+  st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
 
 
 with tab4:

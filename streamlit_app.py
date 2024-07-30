@@ -147,6 +147,14 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 
 with tab1:
+
+  txt('#### Predictive modelling of British Airways customer bookings','')
+  st.markdown('''
+  Analysing customer bookings data and training a model to predict whether a customer completes a booking or not.
+  ''')
+  txt5('**Skills**', '`Data Cleaning`, `Data Visualization`, `Machine Learning`')
+  st.link_button(label='Notebook', url='https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb')
+
   txt('#### British Airways Customer Review Analysis','')
   st.markdown('''
   Analysing customer reviews for British Airways using NLTK.

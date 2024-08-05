@@ -12,6 +12,13 @@ import io
 import numpy as np
 from sklearn.preprocessing import  StandardScaler
 from scipy.stats import chi2_contingency
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+import pickle
+from sklearn.metrics import  accuracy_score, roc_auc_score, precision_score, recall_score
+from imblearn.over_sampling import SMOTE
 
 
 @st.cache_data(persist='disk')
@@ -103,7 +110,7 @@ and the `percentiles` of the distribution. Next, we need to check how the data i
 
 
 # Streamlit app
-st.title("Histograms of Numerical Features")
+st.title("Data Exploration and Preparation")
 
 # Select numerical columns
 numerical_columns = df.select_dtypes(include=['int64', 'float64']).nunique().loc[lambda x: x > 2].index.tolist()
@@ -197,10 +204,70 @@ def categorical_corr_matrix(df, cat_vars, alpha=0.05):
 
 corr_matrix, significance_matrix = categorical_corr_matrix(df, categorical_features)
 
-st.dataframe(corr_matrix)
-st.dataframe(significance_matrix)
+st.dataframe(corr_matrix, width=920)
 
-# if p < alpha:
-#     st.text("Reject the null hypothesis - there is a significant association between the variables.")
-# else:
-#     st.text("Fail to reject the null hypothesis - no significant association between the variables.")
+st.header('Model Training')
+st.markdown('''
+Now its time to train a model. Based on the dataset we have, we can use Logistic Regression, Random Forest and Decision Tree with GridSearchCV
+then assess the evaluation metrics to select the best model for our use case.
+''')
+
+X = df_encoded.drop(columns=['booking_complete'], axis=1)
+y = df_encoded['booking_complete']
+
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+smote = SMOTE(random_state=42)
+X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
+
+st.subheader('Logistic Regression')
+import joblib
+
+@st.cache_resource
+def train_log_reg():
+
+    result = ''
+    model = LogisticRegression(max_iter=1000)
+    param_grid = {'C': [0.1, 1, 10, 100], 'penalty': ['l2']}
+    grid_search = GridSearchCV(estimator = model,  param_grid = param_grid, scoring = 'accuracy', cv = 5, verbose=0)
+    grid_search.fit(X_train_res, y_train_res)
+    result = grid_search.best_estimator_
+    joblib.dump(result, 'models/british_airways_bookings_log_reg.pkl')
+
+
+log_reg = joblib.load('models/british_airways_bookings_log_reg.pkl')
+
+#train_log_reg()
+#Random Forest
+# from sklearn.ensemble import RandomForestClassifier
+# forest_reg = RandomForestClassifier()
+# forest_reg.fit(X_train, y_train)
+# #XGB
+# xgb_model = xgb.XGBClassifier(random_state=42)
+# xgb_model.fit(X_train, y_train)
+
+def evaluate_model(model):
+
+    test_predictions = model.predict(X_test)
+    train_predictions = model.predict(X_train)
+    if hasattr(model, "predict_proba"):
+        test_probs = model.predict_proba(X_test)[:, 1]  # Get probabilities for the positive class
+        auc = roc_auc_score(y_test, test_probs)
+    else:
+        auc = "N/A"  # ROC AUC requires probability scores
+
+    auc = roc_auc_score(y_test, test_predictions)
+    accuracy = accuracy_score(y_test, test_predictions)
+    precision = precision_score(y_test, test_predictions)
+    recall = recall_score(y_test, test_predictions)
+    
+    return {
+        'auc':auc,
+        'accuracy': accuracy,
+        'precision': precision,
+        'recall': recall
+    }
+
+st.text(evaluate_model(model=log_reg))

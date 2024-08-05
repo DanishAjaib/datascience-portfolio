@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from nltk import word_tokenize
-from nltk import pos_tag
 from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 from matplotlib import pyplot as plt
@@ -217,12 +216,6 @@ st.markdown('''From the above charts, we can see that the majority of British Ai
             have happy while 29.2% areunhappy with BA services. Only 0.7% are neutral. Next, we look 
             at the overall sentiment distribution. Next, weplot the word clouds for both positive and negative reviews.''')
 
-
-
-
-
-
-
 # Generate word clouds
 positive_reviews = ' '.join(df[df['sentiment'] == 'positive']['preprocessed_review'])
 negative_reviews = ' '.join(df[df['sentiment'] == 'negative']['preprocessed_review'])
@@ -380,7 +373,6 @@ majority of positive and negative experiences. This could simply mean that custo
 positive experience but some customer experiences seem to negative about the simillar aspects of the travel experience. 
 ''')
 
-# Display in Streamlit
 st.title("Review Length by Sentiment")
 st.altair_chart(create_boxplot(), use_container_width=True)
 
@@ -389,12 +381,6 @@ Finally, the box plot of review length shows that that on average negative and p
 length ranging from ~50 to a little over 100 words with positive reviews being slightly larger. 
 Neutral reviews seem to be very short on average containing about 50 words.
 ''')
-from streamlit.components.v1 import html
-def open_source_code(url):
-    open_script= """
-        <script type="text/javascript">
-            window.open('%s', '_blank').focus();
-        </script>
-    """ % (url)
-    html(open_script)
-st.button(label='Source Code', use_container_width=True, on_click=open_source_code('https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb'))
+
+st.link_button(label='Notebook', url='https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb', use_container_width=True)
+

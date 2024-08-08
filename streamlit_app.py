@@ -15,16 +15,19 @@ resume_page = st.Page(
 british_airways_analysis_page = st.Page(
   page='views/british_airways_reviews_notebook.py',
   title='British Airways Customer Reviews Analysis',
+  icon=':material/description:',
 )
 
 british_airways_bookings_analysis_page = st.Page(
   page='views/british_airways_bookings_analysis.py',
   title='British Airways Bookings Analysis',
+  icon=':material/description:',
 )
 
 australia_rain_analysis_page = st.Page(
   page='views/australia_rain_forecast.py',
   title='Australia next day rain analysis',
+  icon=':material/description:',
 )
 pg = st.navigation(
   {

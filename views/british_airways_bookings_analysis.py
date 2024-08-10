@@ -19,7 +19,7 @@ from sklearn.ensemble import RandomForestRegressor
 import pickle
 from sklearn.metrics import  accuracy_score, roc_auc_score, precision_score, recall_score
 from imblearn.over_sampling import SMOTE
-
+import modelbit as mb
 
 @st.cache_data(persist='disk')
 def get_info_df(df):
@@ -152,9 +152,9 @@ for col in continuous_features_transformed:
 st.title("Feature Scaling")
 
 from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler()
+import joblib
+scaler = joblib.load('models/british_airways_bookings_scaler.pkl')
 df_transformed[continuous_features_transformed] = scaler.fit_transform(df_transformed[continuous_features_transformed])
-pickle.dump(scaler, open('models/british_airways_bookings_scaler.pkl', 'wb'))
 create_histogram_grid(features_num=continuous_features_transformed, num_cols=3, df=df_transformed)
 st.markdown(
     '''
@@ -185,7 +185,7 @@ st.markdown(
 def predict_booking_complete(num_passengers,sales_channel,trip_type,purchase_lead,length_of_stay,flight_hour,flight_day,route,booking_origin,wants_extra_baggage,wants_preferred_seat,wants_in_flight_meals,flight_duration):
     
     # Load the model
-    model = joblib.load('models/british_airways_bookings_random_forest.pkl')
+    # model = joblib.load('models/british_airways_bookings_random_forest.pkl')
     
 
     # Create a dataframe with the new data
@@ -223,7 +223,6 @@ def predict_booking_complete(num_passengers,sales_channel,trip_type,purchase_lea
     st.text("After log transformation:")
     st.dataframe(new_data.head())
     
-    scaler = joblib.load('models/british_airways_bookings_scaler.pkl', )
     new_data[num_columns] = scaler.transform(new_data[num_columns])
     
     st.text("After scaling:")
@@ -243,13 +242,12 @@ def predict_booking_complete(num_passengers,sales_channel,trip_type,purchase_lea
     
     new_data = new_data[all_features]
 
-    # Ensure the new data has the same columns as the training data
-    # Note: You might need to align columns with the training data here
     st.text("Prepared Data:")
     st.dataframe(new_data.head(10))
     # Make a prediction
-    probablity = model.predict_proba(new_data)
-    return probablity
+    probablity = _model.predict_proba(new_data)
+    prediction = _model.predict(new_data)
+    return prediction, probablity
 
 def categorical_corr_matrix(df, cat_vars, alpha=0.05):
     """
@@ -263,10 +261,8 @@ def categorical_corr_matrix(df, cat_vars, alpha=0.05):
     Returns:
     - pd.DataFrame with p-values and significance indication
     """
-    # Create an empty DataFrame to hold p-values
     corr_matrix = pd.DataFrame(index=cat_vars, columns=cat_vars)
 
-    # Loop through each pair of categorical variables
     for i in range(len(cat_vars)):
         for j in range(len(cat_vars)):
             if i == j:
@@ -351,16 +347,22 @@ def plot_classification_report(report):
     report_df = pd.DataFrame(report).transpose()
     st.dataframe(report_df)
 
+@st.cache_data(persist='disk')
+
+def load_model():
+    model = mb.get_model("british_airways_bookings_random_forest")
+    return model
 # log_reg = joblib.load('models/british_airways_bookings_log_reg.pkl')
 #check if model already exists
-import os
-if not os.path.exists('models/british_airways_bookings_random_forest.pkl'):
-    train_model()
-else:
-    _model = joblib.load('models/british_airways_bookings_random_forest.pkl')
+# import os
+# if not os.path.exists('models/british_airways_bookings_random_forest.pkl'):
+#     train_model()
+# else:
+#     _model = joblib.load('models/british_airways_bookings_random_forest.pkl')
 
 st.header('Model Evaluation')
 
+_model = load_model()
 st.subheader('Feature Importance')
 feature_importance = get_feature_importance(_model, X_train)
 # Create the Altair chart
@@ -447,17 +449,18 @@ st.write({
     'flight_duration': flight_duration,
 })
 
-prediction = predict_booking_complete(num_passengers, sales_channel, trip_type, purchase_lead, length_of_stay, flight_hour, flight_day, route, booking_origin, wants_extra_baggage, wants_preferred_seat, wants_in_flight_meals, flight_duration)
+prediction, probablity = predict_booking_complete(num_passengers, sales_channel, trip_type, purchase_lead, length_of_stay, flight_hour, flight_day, route, booking_origin, wants_extra_baggage, wants_preferred_seat, wants_in_flight_meals, flight_duration)
+probablity = probablity.flatten()
 st.header('Prediction')
 
 @st.cache_resource
-def show_donut_chart(prediction_probabilities):
+def show_donut_chart(probablity):
     color_red, color_green = '#FF204E', '#BED754'
 
     # Create a DataFrame with the prediction probabilities
     df = pd.DataFrame({
         'Class': ['Not Complete', 'Complete'],
-        'Probability': [1 - prediction_probabilities[0][0], prediction_probabilities[0][0]],
+        'Probability': [probablity[0], probablity[1]],
         'Color': [color_red, color_green]
     })
 
@@ -474,5 +477,5 @@ def show_donut_chart(prediction_probabilities):
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
 
-show_donut_chart(prediction)
+show_donut_chart(probablity)
 # st.text(evaluate_model(model=log_reg))

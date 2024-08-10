@@ -38,7 +38,6 @@ pg = st.navigation(
 st.logo('assets/codingisfun_logo.png')
 st.sidebar.text('Made with ❤ in Sydney')
 
-
 pg.run()
 
 

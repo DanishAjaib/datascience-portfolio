@@ -153,9 +153,12 @@ st.title("Feature Scaling")
 
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-scaler = joblib.load('models/british_airways_bookings_scaler.pkl')
+scaler = joblib.load('models/british_airways/scaler.pkl')
+
 df_transformed[continuous_features_transformed] = scaler.fit_transform(df_transformed[continuous_features_transformed])
+
 create_histogram_grid(features_num=continuous_features_transformed, num_cols=3, df=df_transformed)
+
 st.markdown(
     '''
     After applying a transformation and scaling the features our data looks more normally distributed which
@@ -182,11 +185,24 @@ st.markdown(
 )
 
 @st.cache_data(persist='disk')
-def predict_booking_complete(num_passengers,sales_channel,trip_type,purchase_lead,length_of_stay,flight_hour,flight_day,route,booking_origin,wants_extra_baggage,wants_preferred_seat,wants_in_flight_meals,flight_duration):
+def predict_booking_complete(
+    num_passengers,
+    sales_channel,
+    trip_type,
+    purchase_lead,
+    length_of_stay,
+    flight_hour,
+    flight_day,
+    route,
+    booking_origin,
+    wants_extra_baggage,
+    wants_preferred_seat,
+    wants_in_flight_meals,
+    flight_duration):
     
     # Load the model
     # model = joblib.load('models/british_airways_bookings_random_forest.pkl')
-    
+    model = mb.get_model("british_airways_bookings_random_forest")
 
     # Create a dataframe with the new data
     new_data = pd.DataFrame({
@@ -245,8 +261,8 @@ def predict_booking_complete(num_passengers,sales_channel,trip_type,purchase_lea
     st.text("Prepared Data:")
     st.dataframe(new_data.head(10))
     # Make a prediction
-    probablity = _model.predict_proba(new_data)
-    prediction = _model.predict(new_data)
+
+    
     return prediction, probablity
 
 def categorical_corr_matrix(df, cat_vars, alpha=0.05):
@@ -302,19 +318,22 @@ import joblib
 @st.cache_resource
 def train_model():
     from sklearn.ensemble import RandomForestClassifier
-    _model=RandomForestClassifier(n_estimators=1000)
+    _model=RandomForestClassifier(n_estimators=100)
     _model.fit(X_train,y_train)
-    joblib.dump(_model, 'models/british_airways_bookings_random_forest.pkl')
+    joblib.dump(_model, 'models/british_airways/model.pkl')
 
 @st.cache_data(persist='disk')
 def get_feature_importance(_model, X):
     #plot feature importance
-    feature_importance = _model.feature_importances_
-    feat_importances = pd.Series(feature_importance, index=X_train.columns)
-    feat_importances = feat_importances.nlargest(10).reset_index()
-    feat_importances.columns = ['Feature', 'Importance']
-
+    # feature_importance = _model.feature_importances_
+    # feat_importances = pd.Series(feature_importance, index=X_train.columns)
+    # feat_importances = feat_importances.nlargest(10).reset_index()
+    # feat_importances.columns = ['Feature', 'Importance']
+    # joblib.dump(feat_importances, 'models/british_airways/feat_importances.pkl')
+    feat_importances = joblib.load('models/british_airways/feat_importances.pkl')
     return feat_importances
+
+@st.cache_data(persist='disk')
 
 def plot_feature_importance(feat_importances):
     chart = alt.Chart(feat_importances).mark_bar().encode(
@@ -323,12 +342,17 @@ def plot_feature_importance(feat_importances):
     ).properties(
         title='Feature Importance'
     )
+    
     # Display the chart using Streamlit
     st.altair_chart(chart, use_container_width=True)
+
+
 @st.cache_data(persist='disk')
 def get_confusion_matrix(_model, X_test, y_test):
-    from sklearn.metrics import confusion_matrix
-    cm = confusion_matrix(y_test, _model.predict(X_test))
+    # from sklearn.metrics import confusion_matrix
+    # cm = confusion_matrix(y_test, _model.predict(X_test))
+    # joblib.dump(cm, 'models/british_airways/cm.pkl')
+    cm = joblib.load('models/british_airways/cm.pkl')
     return cm
 
 @st.cache_data(persist='disk')
@@ -338,8 +362,10 @@ def plot_confusion_matrix(confusion_matrix):
 
 @st.cache_data(persist='disk')
 def get_classification_report(_model, X_test, y_test):
-    from sklearn.metrics import classification_report
-    report = classification_report(y_test, _model.predict(X_test), output_dict=True)
+    # from sklearn.metrics import classification_report
+    # report = classification_report(y_test, _model.predict(X_test), output_dict=True)
+    # joblib.dump(report, 'models/british_airways/classification_report.pkl')
+    report = joblib.load('models/british_airways/classification_report.pkl')
     return report
 
 @st.cache_data(persist='disk')
@@ -347,31 +373,19 @@ def plot_classification_report(report):
     report_df = pd.DataFrame(report).transpose()
     st.dataframe(report_df)
 
-@st.cache_data(persist='disk')
 
-def load_model():
-    model = mb.get_model("british_airways_bookings_random_forest")
-    return model
-# log_reg = joblib.load('models/british_airways_bookings_log_reg.pkl')
-#check if model already exists
-# import os
-# if not os.path.exists('models/british_airways_bookings_random_forest.pkl'):
-#     train_model()
-# else:
-#     _model = joblib.load('models/british_airways_bookings_random_forest.pkl')
 
 st.header('Model Evaluation')
-
-_model = load_model()
+# train_model()
 st.subheader('Feature Importance')
-feature_importance = get_feature_importance(_model, X_train)
+feature_importance = get_feature_importance()
 # Create the Altair chart
 plot_feature_importance(feature_importance)
 
-confusion_matrix = get_confusion_matrix(_model, X_test, y_test)
+confusion_matrix = get_confusion_matrix()
 plot_confusion_matrix(confusion_matrix)
 
-classification_report = get_classification_report(_model, X_test, y_test)
+classification_report = get_classification_report()
 plot_classification_report(classification_report)
 
 
@@ -431,26 +445,28 @@ flight_duration = st.number_input(
     value=5.0
 )
 st.subheader('Booking Completion Prediction')
-# Display the input values
+# display the input values
 st.subheader('Input Values')
-st.write({
-    'num_passengers': num_passengers,
-    'sales_channel': sales_channel,
-    'trip_type': trip_type,
-    'purchase_lead': purchase_lead,
-    'length_of_stay': length_of_stay,
-    'flight_hour': flight_hour,
-    'flight_day': flight_day,
-    'route': route,
-    'booking_origin': booking_origin,
-    'wants_extra_baggage': wants_extra_baggage,
-    'wants_preferred_seat': wants_preferred_seat,
-    'wants_in_flight_meals': wants_in_flight_meals,
-    'flight_duration': flight_duration,
-})
+st.write(
+    {
+        'num_passengers': num_passengers,
+        'sales_channel': sales_channel,
+        'trip_type': trip_type,
+        'purchase_lead': purchase_lead,
+        'length_of_stay': length_of_stay,
+        'flight_hour': flight_hour,
+        'flight_day': flight_day,
+        'route': route,
+        'booking_origin': booking_origin,
+        'wants_extra_baggage': wants_extra_baggage,
+        'wants_preferred_seat': wants_preferred_seat,
+        'wants_in_flight_meals': wants_in_flight_meals,
+        'flight_duration': flight_duration,
+    }
+)
 
 prediction, probablity = predict_booking_complete(num_passengers, sales_channel, trip_type, purchase_lead, length_of_stay, flight_hour, flight_day, route, booking_origin, wants_extra_baggage, wants_preferred_seat, wants_in_flight_meals, flight_duration)
-probablity = probablity.flatten()
+# probablity = probablity.flatten()
 st.header('Prediction')
 
 @st.cache_resource
@@ -477,5 +493,5 @@ def show_donut_chart(probablity):
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
 
-show_donut_chart(probablity)
+# show_donut_chart(probablity)
 # st.text(evaluate_model(model=log_reg))

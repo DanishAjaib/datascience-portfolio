@@ -24,15 +24,15 @@ british_airways_bookings_analysis_page = st.Page(
   icon=':material/description:',
 )
 
-australia_rain_analysis_page = st.Page(
-  page='views/australia_rain_forecast.py',
-  title='Australia next day rain analysis',
+accenture_internship = st.Page(
+  page='views/accenture_data_analytics_internship.py',
+  title='Accenture Data Analytics and Visualizations Internship',
   icon=':material/description:',
 )
 pg = st.navigation(
   {
     'Info': [resume_page],
-    'Notebooks': [british_airways_analysis_page,british_airways_bookings_analysis_page,  australia_rain_analysis_page]
+    'Notebooks': [british_airways_analysis_page,british_airways_bookings_analysis_page,  accenture_internship]
   }
 )
 st.logo('assets/codingisfun_logo.png')

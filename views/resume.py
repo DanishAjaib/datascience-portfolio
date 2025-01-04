@@ -190,6 +190,9 @@ with tab3:
   st.markdown('''
    This script connects to multiple camera streams responsible for Automatic Number Plate Recognition. Based on the authorization status of a vehicle entering or exiting, the script controls gate operations by sending a signal to an onsite microcontroller.
   ''')
+  st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/7N4J4pLdoeLi/space-shuttle-exit-left/')
+
+
   txt5('**Skills**', '`Python`, `API`, `Heroku`,')
 
 

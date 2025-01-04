@@ -7,21 +7,16 @@ import streamlit.components.v1 as components
 
 
 
-#####################
-# Header 
-
 
 image = Image.open('dp2.png')
 st.image(image, width=150)
 
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''
-Versatile individual with 10+ years of programming experience as a hobbyist and a freelance developer with further experience in Exploratory Data Analysis, Data Visualization, Hypothesis testing and Machine Learning through personal and university projects. 
+Versatile individual with 10+ years of programming experience as a hobbyist and a freelance developer with further experience in Exploratory Data Analysis, Data Visualization, Hypothesis Testing, and Machine Learning through personal and university projects. 
 ''')
 
 
-#####################
-# Custom function for printing text
 def txt(a, b):
   col1, col2 = st.columns([4,1])
   with col1:
@@ -83,7 +78,7 @@ vehicles.
 - Developed Flutter Apps for Web, Mobile, Windows and Tablets.
 ''')
 
-txt('**Web Administrator, PossumPiper**, , Sydney , Australia',
+txt('**Web Administrator, PossumPiper**, Sydney, Australia',
 '2012-2021')
 st.markdown('''
 - Created and managed WordPress websites.
@@ -98,7 +93,7 @@ txt3('Programming', '`Python`, `R`, `Dart`, `Kotlin`, `Java`')
 txt3('Data processing/wrangling', '`SQL`, `pandas`, `numpy`')
 txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly` , `Tableau`')
 txt3('Machine Learning', '`scikit-learn`')
-txt3('Model deployment', '`streamlit`,`Heroku`, `AWS`, ')
+txt3('Model deployment', '`streamlit`, `Heroku`, `AWS`')
 
 st.header('Projects')
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
@@ -115,42 +110,42 @@ with tab1:
 
   txt('#### Predictive modelling of British Airways customer bookings','')
   st.markdown('''
-  Analysing customer bookings data and training a model to predict whether a customer completes a booking or not.
+  Analyzing customer bookings data and training a model to predict whether a customer completes a booking or not.
   ''')
   txt5('**Skills**', '`Data Cleaning`, `Data Visualization`, `Machine Learning`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb')
 
   txt('#### British Airways Customer Review Analysis','')
   st.markdown('''
-  Analysing customer reviews for British Airways using NLTK.
+  Analyzing customer reviews for British Airways using NLTK.
   ''')
   txt5('**Skills**', '`Web Scraping`, `Data Cleaning`, `NLP`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/british_airways_internship_analysis/blob/main/main.ipynb')
 
   txt('#### Predicting Employee Churn','')
   st.markdown('''
-  Analysing employee churn data and building a model to predict employee churn..
+  Analyzing employee churn data and building a model to predict employee churn.
   ''')
   txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/employee_churn')
 
   txt('#### Tweet Analysis and Clustering','')
   st.markdown('''
-  A project demonstrating Data Cleaning, Enrichment, Analysis, Topic Extraction, Classification and Clustering of a twitter dataset.
+  A project demonstrating Data Cleaning, Enrichment, Analysis, Topic Extraction, Classification, and Clustering of a Twitter dataset.
   ''')
   txt5('**Skills**', '`Data Wrangling`, `Data Cleaning`, `Machine Learning`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Tweet-Analysis-and-Clustering')
 
   txt('#### Australia Rain Visualization and Forecast','')
   st.markdown('''
-  A hoppy project analysing Australia rain patterns and building a model for predicting next day rain.
+  A hobby project analyzing Australia rain patterns and building a model for predicting next day rain.
   ''')
   txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/australia_rain_forecast')
 
   txt('#### Amazon Sentiment Analysis','')
   st.markdown('''
-  A university project focusing on Web Scraping, Data Cleaning, Data Analsis and finally building a Model for sentiment prediction.
+  A university project focusing on Web Scraping, Data Cleaning, Data Analysis, and finally building a Model for sentiment prediction.
   ''')
   txt5('**Skills**', '`Pandas`, `Python`, `Web Scraping`, `EDA`, `Model Building`, `Data Visualization`')
   st.link_button(label='Notebook', url='https://github.com/DanishAjaib/Amazon-Sentiment-Analysis')
@@ -173,7 +168,7 @@ with tab2:
 
   txt('#### Seoul Bicycle Rental Visualization','')
   st.markdown('''
-    A Tableau dashboard visualizing an email marketing campaign.
+    A Tableau dashboard visualizing bicycle rentals in Seoul.
   ''')
   txt5('**Skills**', '`Tableau`, `Data Visualization`')
   st.link_button(label='Dashboard', url='https://public.tableau.com/app/profile/danish.ajaib/viz/SeoulBicycleRental_17064119275750/Dashboard1')
@@ -182,18 +177,18 @@ with tab2:
 with tab3:
   txt('#### Backend App','')
   st.markdown('''
-   This script is responsible for 
+   This script is responsible for:
    - Monitoring email inboxes using Microsoft Graph API.
-   - Data Ingestion, cleaning and preparation.
-   - Pushing the  data to Elastic Search and Firestore.
-   - Monitoring customer  email inqueries and responding to them using Open AI ChatGPT Assisstants API.
+   - Data Ingestion, cleaning, and preparation.
+   - Pushing the data to Elastic Search and Firestore.
+   - Monitoring customer email inquiries and responding to them using OpenAI ChatGPT Assistant's API.
   ''')
   txt5('**Skills**', '`Python`, `Data Cleaning`, `Gen AI`, `Heroku`, `Elastic Search`, `Firestore`, `Redis`')
   st.link_button(label='Source Code', url='https://gitfront.io/r/danishajaib/YFg4zJVy5TXo/email-server/')
 
   txt('#### Python Script for Monitoring Car Park Cameras','')
   st.markdown('''
-   This script connects to multiple camera streams responsbile Automatic Number Plate Recognition. Based on the authorization status of a vehicle entering or exiting, the script controls gate operations by sending a singal to an onsite microcontroller. 
+   This script connects to multiple camera streams responsible for Automatic Number Plate Recognition. Based on the authorization status of a vehicle entering or exiting, the script controls gate operations by sending a signal to an onsite microcontroller.
   ''')
   txt5('**Skills**', '`Python`, `API`, `Heroku`,')
 
@@ -208,7 +203,7 @@ with tab4:
 
   txt('#### Market Analysis and Strategy','')
   st.markdown('''
-  In this project during my internship, I was part of a team of four tasked with developing a market analysis and marketing plan for an emerging oat milk brand. We conducted in-depth research on market trends and competitor strategies, focusing on plant-based dairy alternatives. Our approach included frequent collaborative team meetings and strategic discussions with the CEO, leading to a tailored marketing strategy. The strategy emphasized health, sustainability, and allergen-free benefits, targeting diverse consumer demographics. This project honed my skills in teamwork, strategic planning, and high-level corporate communication.
+  In this project during my internship, I was part of a team of four tasked with developing a market analysis and marketing plan for an emerging oat milk brand. We conducted in-depth research on market trends and competitor strategies, focusing on plant-based dairy alternatives. Our approach included frequent collaborative team meetings and strategic discussions with the CEO, leading to a tailored marketing strategy. The strategy emphasized health, sustainability, and allergen-free benefits, targeting diverse consumer demographics. This project developed my skills in teamwork, strategic planning, and high-level corporate communication.
   ''')
   txt5('**Skills**', '`Communication`, `Market Data Analysis`, `Market Research`, `Team Collaboration`')
   st.link_button(label='Report', url='https://www.linkedin.com/in/danish-ajaib-865528107/details/projects/1704617545125/single-media-viewer?type=DOCUMENT&profileId=ACoAABrzyM0BjMYrqY8KqDQ1UnHu_HgkagWHQ6A&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BDDyIlEzdTFGKgFdJDz3dRw%3D%3D')
@@ -223,7 +218,7 @@ with tab5:
 
 
 
- 
+
 #####################
 st.markdown('''
 ## Licenses & Certification
@@ -248,9 +243,9 @@ st.markdown('''
 txt('**Masters of Data Science**, *Macquarie University*, Australia',
 '2019-2023')
 st.markdown('''
-**Date Conferred:** February 29, 2024  
-**Date Qualified:** December 7, 2023  
-            
+**Date Conferred:** February 29, 2024
+**Date Qualified:** December 7, 2023
+
 **Key Courses:**
 - Web Technology
 - Data Science

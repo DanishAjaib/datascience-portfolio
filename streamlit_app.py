@@ -39,7 +39,3 @@ pg = st.navigation(
 #st.sidebar.text('Made with ❤ in Sydney')
 
 pg.run()
-
-
-
-
